@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:id="@+id/main_layout"
+    android:id="@+id/messenger_fragment"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/top_tabs"
@@ -17,21 +16,21 @@
         android:weightSum="100"
         >
         <TextView
-            android:text="Messenger"
+            android:text="Phrases"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="25"
             android:textAlignment="center"
             android:textSize="40dp"/>
         <TextView
-            android:text="Web"
+            android:text="Questions"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="25"
             android:textAlignment="center"
             android:textSize="40dp"/>
         <TextView
-            android:text="Emergency"
+            android:text="Keyboard"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="25"
@@ -45,14 +44,5 @@
             android:textAlignment="center"
             android:textSize="40dp"/>
     </LinearLayout>
-
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.example.such.smartcenter.MainFragment"
-        android:layout_below="@+id/top_tabs">
-
-    </FrameLayout>
 
 </RelativeLayout>
