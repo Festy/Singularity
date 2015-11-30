@@ -12,14 +12,14 @@ import android.widget.TableRow;
 /**
  * Created by utsavpatel on 11/27/15.
  */
-public class AddKeyBoard extends Activity{
-    public static void addKeyboard(Context context, View view, LayoutInflater inflater) {
+public class AddKeyBoard{
+    public static void addKeyboard(Context context, View view, LayoutInflater inflater, int keayboard_id) {
 
         int columns = 6;
         int rows = 5;
         int count=0;
 
-        TableLayout layout = (TableLayout) view.findViewById(R.id.table);
+        TableLayout layout = (TableLayout) view.findViewById(keayboard_id);
 
         for (int r=0; r<rows; r++) {
 

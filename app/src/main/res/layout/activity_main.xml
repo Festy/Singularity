@@ -2,59 +2,24 @@
 <RelativeLayout
     android:id="@+id/main_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/top_tabs"
-        android:orientation="horizontal"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:id="@+id/top_frag_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </RelativeLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:id="@+id/bottom_frag_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:useDefaultMargins="true"
-        android:weightSum="100"
-        >
-        <Button
-            android:text="Messenger"
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:layout_weight="25"
-            android:textAlignment="center"
-
-            />
-        <Button
-            android:text="Web"
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:layout_weight="25"
-            android:textAlignment="center"
-            />
-        <Button
-            android:text="Emergency"
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:layout_weight="25"
-            android:textAlignment="center"
-            />
-        <Button
-            android:text="More..."
-            android:layout_height="wrap_content"
-            android:layout_width="0dp"
-            android:layout_weight="25"
-            android:textAlignment="center"
-            />
-    </LinearLayout>
-
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/fragment_container"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.example.such.smartcenter.MainFragment"
-        android:layout_below="@+id/top_tabs">
-
-    </FrameLayout>
+        android:layout_below="@+id/top_frag_container">
+    </RelativeLayout>
 
 </RelativeLayout>

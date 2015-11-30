@@ -60,14 +60,15 @@
                 android:layout_height="match_parent"
                 android:id="@+id/table"
                 android:shrinkColumns="*">
-
             </TableLayout>
         </LinearLayout>
 
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="30">
+            android:layout_weight="30"
+            android:id="@+id/messenger_fragment_pan">
         </LinearLayout>
 
     </LinearLayout>

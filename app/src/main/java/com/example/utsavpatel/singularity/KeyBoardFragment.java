@@ -19,7 +19,7 @@ import java.util.zip.Inflater;
 /**
  * Created by utsavpatel on 11/26/15.
  */
-public class MessengerFragment extends Fragment{
+public class KeyBoardFragment extends Fragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
