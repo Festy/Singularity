@@ -38,6 +38,7 @@ public class ConversationFragment extends Fragment implements View.OnClickListen
 
     /** The Editext to compose the message. */
     private EditText txt;
+    private TextView buddyNameET;
 
     /** The user name of buddy. */
     private String buddy;
@@ -73,6 +74,10 @@ public class ConversationFragment extends Fragment implements View.OnClickListen
                 | InputType.TYPE_TEXT_FLAG_MULTI_LINE);
 
         buddy = getArguments().getString(Const.EXTRA_DATA);
+        buddyNameET = (TextView) view.findViewById(R.id.buddyname);
+        buddyNameET.setText(buddy);
+
+
         handler = new Handler();
         loadConversationList();
 

@@ -17,17 +17,17 @@
             android:background="@drawable/chat_bubble_green"
             android:gravity="center_vertical"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/pad_5dp"
+            android:paddingBottom="@dimen/pad_2dp"
             android:paddingLeft="@dimen/pad_15dp"
             android:paddingRight="@dimen/pad_chat_item"
-            android:paddingTop="@dimen/pad_5dp" >
+            android:paddingTop="@dimen/pad_2dp" >
 
             <TextView
                 android:id="@+id/lbl1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
-                android:textColor="@color/white"
+                android:textColor="@color/white_smoke"
                 android:textSize="@dimen/txt_13sp" />
             <TextView
                 android:id="@+id/lbl2"
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:text="sd"
                 android:textColor="@color/white"
-                android:textSize="@dimen/txt_14sp" 
+                android:textSize="@dimen/txt_15sp"
                 android:maxLines="4"/>
 
         </LinearLayout>
@@ -46,10 +46,10 @@
             android:layout_height="wrap_content"
             android:text="textvdv"
             android:textColor="@color/white"
-            android:textSize="@dimen/txt_14sp"
+            android:textSize="@dimen/txt_13sp"
             android:layout_alignRight="@+id/v1"
             android:layout_below="@+id/v1"
-            android:layout_marginTop="@dimen/pad_5dp"
+            android:layout_marginTop="@dimen/pad_2dp"
             android:layout_marginRight="@dimen/pad_20dp"
             />
 </LinearLayout>
