@@ -26,7 +26,7 @@ public class ChatFragment extends Fragment{
             childFragmentTransaction = childFragmentTransaction.add(R.id.top_chat_container, topChatFragment);
         }
         if(childFragmentManager.findFragmentById(R.id.keyboard_fragment)==null){
-            KeyBoardFragment keyBoardFragment = new KeyBoardFragment();
+            KeyboardFragment keyBoardFragment = new KeyboardFragment();
             childFragmentTransaction = childFragmentTransaction.add(R.id.keyboard_container_at_chat, keyBoardFragment);
         }
             childFragmentTransaction.commit();

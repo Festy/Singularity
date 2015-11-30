@@ -13,7 +13,7 @@ import android.widget.TableRow;
 /**
  * Created by utsavpatel on 11/26/15.
  */
-public class KeyBoardFragment extends Fragment{
+public class KeyboardFragment extends Fragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
