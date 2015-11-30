@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.utsavpatel.singularity.R;
+import com.example.utsavpatel.singularity.UserListFragment;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -128,10 +129,10 @@ public class Chat extends CustomActivity
 
 		String s = txt.getText().toString();
 		final Conversation c = new Conversation(s, new Date(),
-				UserList.user.getUsername(),buddy);
+				UserListFragment.user.getUsername(),buddy);
 		c.setStatus(Conversation.STATUS_SENT);
 		convList.add(c);
-		UserList.user.saveConversation(c);
+		UserListFragment.user.saveConversation(c);
 		adp.notifyDataSetChanged();
 		txt.setText(null);
 
@@ -161,7 +162,7 @@ public class Chat extends CustomActivity
 	private void loadConversationList()
 	{
 		if(convList.size()==0) {
-			for (Conversation c : UserList.user.getConversations(buddy)) {
+			for (Conversation c : UserListFragment.user.getConversations(buddy)) {
 				convList.add(c);
 				if (lastMsgDate == null
 						|| lastMsgDate.before(c.getDate()))

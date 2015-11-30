@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 /**
  * Created by utsavpatel on 11/26/15.
  */
@@ -29,6 +30,15 @@ public class ChatFragment extends Fragment{
             KeyboardFragment keyBoardFragment = new KeyboardFragment();
             childFragmentTransaction = childFragmentTransaction.add(R.id.keyboard_container_at_chat, keyBoardFragment);
         }
+        if(childFragmentManager.findFragmentById(R.id.user_list)==null){
+            UserListFragment userListFragment = new UserListFragment();
+            childFragmentTransaction = childFragmentTransaction.add(R.id.chatbox_fragment_container, userListFragment);
+        }
+
+//        if(childFragmentManager.findFragmentById(R.id.chat)==null){
+//            ConversationFragment coversationFragment = new ConversationFragment();
+//            childFragmentTransaction = childFragmentTransaction.add(R.id.chatbox_fragment_container, userListFragment);
+//        }
             childFragmentTransaction.commit();
         return view;
     }

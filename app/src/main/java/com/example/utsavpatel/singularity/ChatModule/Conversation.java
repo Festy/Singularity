@@ -1,7 +1,7 @@
 package com.example.utsavpatel.singularity.ChatModule;
 
 import java.util.Date;
-import com.example.utsavpatel.singularity.ChatModule.UserList;
+import com.example.utsavpatel.singularity.UserListFragment;
 
 /**
  * The Class Conversation is a Java Bean class that represents a single chat
@@ -84,7 +84,7 @@ public class Conversation
 	 */
 	public boolean isSent()
 	{
-		return UserList.user.getUsername().equals(sender);
+		return UserListFragment.user.getUsername().equals(sender);
 	}
 
 	/**

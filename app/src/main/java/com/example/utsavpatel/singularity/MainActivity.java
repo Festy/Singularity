@@ -1,4 +1,5 @@
 package com.example.utsavpatel.singularity;
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -43,8 +44,11 @@ public class MainActivity extends FragmentActivity{
             fragmentTransaction.commit();
 
         }
+        Intent intent = new Intent(this, UserListFragment.class);
+        //startActivity(intent);
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
