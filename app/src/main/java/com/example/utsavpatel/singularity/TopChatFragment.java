@@ -19,14 +19,13 @@ import java.util.zip.Inflater;
 /**
  * Created by utsavpatel on 11/26/15.
  */
-public class MessengerFragment extends Fragment{
+public class TopChatFragment extends Fragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.messenger_fragment, container, false);
-        AddKeyBoard.addKeyboard(getContext(), view, inflater, R.id.table);
+        View view = inflater.inflate(R.layout.top_chat_fragment, container, false);
         return view;
     }
 
