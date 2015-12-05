@@ -17,10 +17,12 @@
             android:layout_height="wrap_content"
             android:text="Back"
             android:id="@+id/backbt"/>
-        <TextView
+
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/buddyname"/>
+            android:id="@+id/buddyname"
+            android:clickable="false"/>
     </LinearLayout>
     <ListView
         android:id="@+id/list"

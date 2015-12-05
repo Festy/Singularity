@@ -20,8 +20,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.utsavpatel.singularity.ChatModule.Const;
-import com.example.utsavpatel.singularity.ChatModule.Conversation;
+import com.example.utsavpatel.singularity.Conversation;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -38,7 +37,7 @@ public class ConversationFragment extends Fragment implements View.OnClickListen
 
     /** The Editext to compose the message. */
     private EditText txt;
-    private TextView buddyNameET;
+    private Button buddyNameET;
 
     /** The user name of buddy. */
     private String buddy;
@@ -73,9 +72,10 @@ public class ConversationFragment extends Fragment implements View.OnClickListen
         txt.setInputType(InputType.TYPE_CLASS_TEXT
                 | InputType.TYPE_TEXT_FLAG_MULTI_LINE);
 
-        buddy = getArguments().getString(Const.EXTRA_DATA);
-        buddyNameET = (TextView) view.findViewById(R.id.buddyname);
+        buddy = getArguments().getString("extraData");
+        buddyNameET = (Button) view.findViewById(R.id.buddyname);
         buddyNameET.setText(buddy);
+        //Log.d("Scroll",buddyNameET.isScrollbarFadingEnabled()+"  "+buddyNameET.isScrollContainer()+"  "+buddyNameET)
 
 
         handler = new Handler();
@@ -86,6 +86,8 @@ public class ConversationFragment extends Fragment implements View.OnClickListen
 
         Button backbt = (Button) view.findViewById(R.id.backbt);
         backbt.setOnClickListener(this);
+
+        buddyNameET.setOnClickListener(this);
 
         return view;
     }
@@ -140,6 +142,8 @@ public class ConversationFragment extends Fragment implements View.OnClickListen
         } else if(v.getId() == R.id.backbt){
             Log.d("OnClick","Back Button");
             goBack();
+        } else if(v.getId() == R.id.buddyname){
+            Log.e("Onclick","");
         } else {
             Log.e("OnClick","404");
         }

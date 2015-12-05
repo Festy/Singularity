@@ -1,4 +1,4 @@
-package com.example.utsavpatel.singularity.ChatModule;
+package com.example.utsavpatel.singularity;
 
 import java.util.ArrayList;
 import java.util.Date;

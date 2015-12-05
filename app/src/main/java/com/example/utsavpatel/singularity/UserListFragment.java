@@ -14,11 +14,6 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.utsavpatel.singularity.ChatModule.Const;
-import com.example.utsavpatel.singularity.ChatModule.User;
-import com.example.utsavpatel.singularity.ChatModule.Utils;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -111,7 +106,7 @@ public class UserListFragment extends Fragment{
                                         View arg1, int pos, long arg3) {
                     Log.d("StartChat", uList.get(pos).getUsername());
                     Bundle bundle = new Bundle();
-                    bundle.putString(Const.EXTRA_DATA, uList.get(pos)
+                    bundle.putString("extraData", uList.get(pos)
                             .getUsername());
                     ConversationFragment conversationFragment = new ConversationFragment();
                     conversationFragment.setArguments(bundle);
@@ -126,9 +121,6 @@ public class UserListFragment extends Fragment{
                 }
             });
         } else {
-            Utils.showDialog(
-                    getContext(),
-                    getString(R.string.err_users));
             Log.e("UserList", getString(R.string.err_users))	;
         }
 
