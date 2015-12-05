@@ -37,6 +37,7 @@ public class UserListFragment extends Fragment{
 
         creatTempUser();
         loadUserList(view);
+        ((MainApplication) getActivity().getApplication()).setCurrentFragmentTag("user_list_fragment");
         return view;
     }
 
@@ -116,8 +117,9 @@ public class UserListFragment extends Fragment{
                     else
                         parent = getFragmentManager();
                     FragmentTransaction fragmentTransaction =  parent.beginTransaction();
-                    fragmentTransaction.add(R.id.chatbox_fragment_container, conversationFragment);
+                    fragmentTransaction.add(R.id.chatbox_fragment_container, conversationFragment, "conversation_fragment");
                     fragmentTransaction.addToBackStack(null).commit();
+                    //parent.executePendingTransactions();
                 }
             });
         } else {

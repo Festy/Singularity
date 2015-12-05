@@ -11,13 +11,15 @@ import android.view.ViewGroup;
 /**
  * Created by utsavpatel on 11/26/15.
  */
-public class TopChatFragment extends Fragment{
+public class MessengerOptionsRibbonFragment extends Fragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.top_chat_fragment, container, false);
+        ((MainApplication) getActivity().getApplication()).setCurrentFragmentTag("messenger_fragment");
+
         return view;
     }
 

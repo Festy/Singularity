@@ -19,14 +19,28 @@ import java.util.zip.Inflater;
 /**
  * Created by utsavpatel on 11/26/15.
  */
-public class TopMainFragment extends Fragment{
+public class MainActivityRibbonFragment extends Fragment implements View.OnClickListener{
 
+    int[] rotationIdList;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.top_main_fragment, container, false);
+        rotationIdList = new int[] {R.id.messengerBt, R.id.webBt, R.id.emergencyBt, R.id.moreBt};
+
+        ((MainApplication) getActivity().getApplication()).setCurrentFragmentTagAndView("main_activity_ribbon_fragment",view,getContext(), rotationIdList);
+
+        ((Button) view.findViewById(R.id.messengerBt)).setOnClickListener(this);
+
         return view;
     }
 
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==R.id.messengerBt){
+            ((MainApplication) getActivity().getApplication()).stopRotation();
+
+        }
+    }
 }

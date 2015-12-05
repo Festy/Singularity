@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 /**
  * Created by utsavpatel on 11/26/15.
  */
-public class ChatFragment extends Fragment{
+public class MessengerFragment extends Fragment{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -23,16 +23,16 @@ public class ChatFragment extends Fragment{
 
 
         if (childFragmentManager.findFragmentById(R.id.top_chat_fragment) == null) {
-            TopChatFragment topChatFragment = new TopChatFragment();
-            childFragmentTransaction = childFragmentTransaction.add(R.id.top_chat_container, topChatFragment);
+            MessengerOptionsRibbonFragment topChatFragment = new MessengerOptionsRibbonFragment();
+            childFragmentTransaction = childFragmentTransaction.add(R.id.top_chat_container, topChatFragment,"messenger_options_ribbon_fragment");
         }
         if(childFragmentManager.findFragmentById(R.id.keyboard_fragment)==null){
             KeyboardFragment keyBoardFragment = new KeyboardFragment();
-            childFragmentTransaction = childFragmentTransaction.add(R.id.keyboard_container_at_chat, keyBoardFragment);
+            childFragmentTransaction = childFragmentTransaction.add(R.id.keyboard_container_at_chat, keyBoardFragment,"keyboard_fragment");
         }
         if(childFragmentManager.findFragmentById(R.id.user_list)==null){
             UserListFragment userListFragment = new UserListFragment();
-            childFragmentTransaction = childFragmentTransaction.add(R.id.chatbox_fragment_container, userListFragment);
+            childFragmentTransaction = childFragmentTransaction.add(R.id.chatbox_fragment_container, userListFragment,"user_list_fragment");
         }
 
 //        if(childFragmentManager.findFragmentById(R.id.chat)==null){

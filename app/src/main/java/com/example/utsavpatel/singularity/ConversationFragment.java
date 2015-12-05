@@ -53,12 +53,12 @@ public class ConversationFragment extends Fragment implements View.OnClickListen
 
     FragmentManager parent;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.chat, container, false);
-
         //parent = getParentFragment().getFragmentManager();
 
         convList = new ArrayList<Conversation>();
@@ -224,4 +224,17 @@ public class ConversationFragment extends Fragment implements View.OnClickListen
 
     }
 
+    public void ListenFromKeyboard(int type, String msg){
+        Log.d("ListenFromKey",msg);
+        if(type == 0){
+            updateTextView(msg);
+        } else if(type==1){
+            sendMessage(getView().findViewById(R.id.txt));
+        }
+    }
+
+    public void updateTextView(String msg){
+        EditText editText = (EditText) getView().findViewById(R.id.txt);
+        editText.append(msg);
+    }
 }

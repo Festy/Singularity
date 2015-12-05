@@ -4,16 +4,18 @@ import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends FragmentActivity{
+public class MainActivity extends FragmentActivity implements KeyboardFragment.OnHeadlineSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ((MainApplication) this.getApplication()).initRotationUnits();
+        ((MainApplication) this.getApplication()).setCurrentFragmentTag("none");
         {
 
             // However, if we're being restored from a previous state,
@@ -24,21 +26,21 @@ public class MainActivity extends FragmentActivity{
             }
 
             // Create a new Fragment to be placed in the activity layout
-            ChatFragment bottomFragment = new ChatFragment();
+            MessengerFragment messengerFragment = new MessengerFragment();
 
             // In case this activity was started with special instructions from an
             // Intent, pass the Intent's extras to the fragment as arguments
-            bottomFragment.setArguments(getIntent().getExtras());
+            messengerFragment.setArguments(getIntent().getExtras());
 
-            TopMainFragment topMainFragment = new TopMainFragment();
-            topMainFragment.setArguments(getIntent().getExtras());
+            MainActivityRibbonFragment mainActivityRibbonFragment = new MainActivityRibbonFragment();
+            mainActivityRibbonFragment.setArguments(getIntent().getExtras());
 
             // Add the fragment to the 'fragment_container' FrameLayout
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction  fragmentTransaction = fragmentManager.beginTransaction();
 
-            fragmentTransaction.add(R.id.top_frag_container, topMainFragment);
-            fragmentTransaction.add(R.id.bottom_frag_container, bottomFragment);
+            fragmentTransaction.add(R.id.top_frag_container, mainActivityRibbonFragment,"main_activity_ribbon_fragment");
+            fragmentTransaction.add(R.id.bottom_frag_container, messengerFragment,"messenger_fragment");
 
 
             fragmentTransaction.commit();
@@ -47,6 +49,23 @@ public class MainActivity extends FragmentActivity{
         Intent intent = new Intent(this, UserListFragment.class);
         //startActivity(intent);
 
+    }
+
+    public void onKeyboardClick(int type, String msg){
+        Log.d("KeyBoard", msg);
+        FragmentManager parent;
+
+        ConversationFragment conversationFragment = (ConversationFragment)
+                getSupportFragmentManager().findFragmentByTag("conversation_fragment");
+
+        if(conversationFragment==null || !conversationFragment.isVisible()) {
+            Log.e("Keyboard", "Fragment Null");
+        } else {
+            if (msg.equals("Enter"))
+                conversationFragment.ListenFromKeyboard(1, msg);
+            else
+                conversationFragment.ListenFromKeyboard(0, msg);
+        }
     }
 
 

@@ -13,13 +13,16 @@
         android:layout_height="wrap_content"
         android:layout_width="0dp"
         android:layout_weight="25"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:id="@+id/messengerBt"
+        />
     <Button
         android:text="Web"
         android:layout_height="wrap_content"
         android:layout_width="0dp"
         android:layout_weight="25"
         android:textAlignment="center"
+        android:id="@+id/webBt"
         />
     <Button
         android:text="Emergency"
@@ -27,11 +30,13 @@
         android:layout_width="0dp"
         android:layout_weight="25"
         android:textAlignment="center"
+        android:id="@+id/emergencyBt"
         />
     <Button
         android:text="More..."
         android:layout_height="wrap_content"
         android:layout_width="0dp"
         android:layout_weight="25"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:id="@+id/moreBt"/>
 </LinearLayout>
